@@ -8,3 +8,13 @@ C:\Users\Asus\source\repos\Otel Kayıt\Otel Kayıt\obj\Debug\Otel Kayıt.csproj.
 C:\Users\Asus\source\repos\Otel Kayıt\Otel Kayıt\obj\Debug\Otel Kayıt.exe
 C:\Users\Asus\source\repos\Otel Kayıt\Otel Kayıt\obj\Debug\Otel Kayıt.pdb
 C:\Users\Asus\source\repos\Otel Kayıt\Otel Kayıt\obj\Debug\Otel_Kayıt.FrmAdmin.resources
+C:\Users\Asus\Desktop\ndp-odev2\Otel Kayıt\Otel Kayıt\bin\Debug\Otel Kayıt.exe.config
+C:\Users\Asus\Desktop\ndp-odev2\Otel Kayıt\Otel Kayıt\bin\Debug\Otel Kayıt.exe
+C:\Users\Asus\Desktop\ndp-odev2\Otel Kayıt\Otel Kayıt\bin\Debug\Otel Kayıt.pdb
+C:\Users\Asus\Desktop\ndp-odev2\Otel Kayıt\Otel Kayıt\obj\Debug\Otel Kayıt.csprojAssemblyReference.cache
+C:\Users\Asus\Desktop\ndp-odev2\Otel Kayıt\Otel Kayıt\obj\Debug\Otel_Kayıt.FrmAdmin.resources
+C:\Users\Asus\Desktop\ndp-odev2\Otel Kayıt\Otel Kayıt\obj\Debug\Otel_Kayıt.Form1.resources
+C:\Users\Asus\Desktop\ndp-odev2\Otel Kayıt\Otel Kayıt\obj\Debug\Otel_Kayıt.Properties.Resources.resources
+C:\Users\Asus\Desktop\ndp-odev2\Otel Kayıt\Otel Kayıt\obj\Debug\Otel Kayıt.csproj.GenerateResource.cache
+C:\Users\Asus\Desktop\ndp-odev2\Otel Kayıt\Otel Kayıt\obj\Debug\Otel Kayıt.exe
+C:\Users\Asus\Desktop\ndp-odev2\Otel Kayıt\Otel Kayıt\obj\Debug\Otel Kayıt.pdb
