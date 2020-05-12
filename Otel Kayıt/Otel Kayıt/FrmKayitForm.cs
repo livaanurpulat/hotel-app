@@ -50,14 +50,19 @@ namespace Otel_Kayıt
         private void button2_Click(object sender, EventArgs e)
         {
             baglanti.Open();
-            SqlCommand komut = new SqlCommand("insert into musteriler (id,Ad,Soyad,OdaNo,GTarih,Telefon,Hesap,CTarih) values ('" + textBox1.Text.ToString() + "','" + textBox2.Text.ToString() + "','" + textBox3.Text.ToString() + "','" + textBox4.Text.ToString() + "','" + dateTimePicker1.Text.ToString() + "','" + textBox5.Text.ToString() + "','" + textBox6.Text.ToString() + "','" + dateTimePicker2.Text.ToString() + "')", baglanti);
+            SqlCommand komut = new SqlCommand("insert into musteriler (id,Ad,Soyad,OdaNo,GTarih,Telefon,Hesap,CTarih) values ('" + textBox1.Text.ToString() + "','" + textBox2.Text.ToString() + "','" + textBox3.Text.ToString() + "','" + comboBox2.Text.ToString() + "','" + dateTimePicker1.Text.ToString() + "','" + textBox5.Text.ToString() + "','" + textBox6.Text.ToString() + "','" + dateTimePicker2.Text.ToString() + "')", baglanti);
             komut.ExecuteNonQuery();
+            komut.CommandText = "insert into doluoda(doluyerler) values ('" + comboBox2.Text + "')";
+            komut.ExecuteNonQuery();
+            komut.CommandText = ("Delete from bosoda where bosyerler ='" + comboBox2.Text + "'");
+            komut.ExecuteNonQuery();
+
+           
             baglanti.Close();
             verilerigoster();
             textBox1.Clear();
             textBox2.Clear();
             textBox3.Clear();
-            textBox4.Clear();
             textBox5.Clear();
             textBox6.Clear();
         }
@@ -68,6 +73,12 @@ namespace Otel_Kayıt
             baglanti.Open();
             SqlCommand komut = new SqlCommand("Delete From musteriler where id= (" + id + ")", baglanti);
             komut.ExecuteNonQuery();
+            komut.CommandText = "insert into bosoda(bosyerler) values ('" + comboBox2.Text + "')";
+            komut.ExecuteNonQuery();
+            komut.CommandText = ("Delete from doluoda where doluyerler ='" + comboBox2.Text + "'");
+            komut.ExecuteNonQuery();
+            
+
             baglanti.Close();
             verilerigoster();
         }
@@ -79,7 +90,7 @@ namespace Otel_Kayıt
             textBox1.Text = listView1.SelectedItems[0].SubItems[0].Text;
             textBox2.Text = listView1.SelectedItems[0].SubItems[1].Text;
             textBox3.Text = listView1.SelectedItems[0].SubItems[2].Text;
-            textBox4.Text = listView1.SelectedItems[0].SubItems[3].Text;
+            comboBox2.Text = listView1.SelectedItems[0].SubItems[3].Text;
             dateTimePicker1.Text = listView1.SelectedItems[0].SubItems[4].Text;
             textBox5.Text = listView1.SelectedItems[0].SubItems[5].Text;
             textBox6.Text = listView1.SelectedItems[0].SubItems[6].Text;
@@ -89,7 +100,7 @@ namespace Otel_Kayıt
         private void button4_Click(object sender, EventArgs e)
         {
             baglanti.Open();
-            SqlCommand komut = new SqlCommand("update musteriler set id='" + textBox1.Text.ToString() + "',Ad='" + textBox2.Text.ToString() + "',Soyad='" + textBox3.Text.ToString() + "',OdaNo='" + textBox4.Text.ToString() + "',GTarih='" + dateTimePicker1.Text.ToString() + "',Telefon='" + textBox5.Text.ToString() + "',Hesap='" + textBox6.Text.ToString() + "',CTarih='" + dateTimePicker2.Text.ToString() + "' where id =" + id + "", baglanti);
+            SqlCommand komut = new SqlCommand("update musteriler set id='" + textBox1.Text.ToString() + "',Ad='" + textBox2.Text.ToString() + "',Soyad='" + textBox3.Text.ToString() + "',OdaNo='" + comboBox2.Text.ToString() + "',GTarih='" + dateTimePicker1.Text.ToString() + "',Telefon='" + textBox5.Text.ToString() + "',Hesap='" + textBox6.Text.ToString() + "',CTarih='" + dateTimePicker2.Text.ToString() + "' where id =" + id + "", baglanti);
             komut.ExecuteNonQuery();
             baglanti.Close();
             verilerigoster();
@@ -115,6 +126,23 @@ namespace Otel_Kayıt
                 ekle.SubItems.Add(oku["CTarih"].ToString());
 
                 listView1.Items.Add(ekle);
+            }
+            baglanti.Close();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            textBox4.Text = textBox4.Text.Substring(1) + textBox4.Text.Substring(0, 1);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            baglanti.Open();
+            SqlCommand komut = new SqlCommand("Select * From bosoda", baglanti);
+            SqlDataReader oda = komut.ExecuteReader();
+            while (oda.Read())
+            {
+                comboBox2.Items.Add(oda[0].ToString());
             }
             baglanti.Close();
         }
