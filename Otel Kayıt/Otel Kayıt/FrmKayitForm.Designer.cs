@@ -89,7 +89,7 @@
             this.columnHeader8});
             this.listView1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(53, 377);
+            this.listView1.Location = new System.Drawing.Point(37, 377);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(919, 105);
             this.listView1.TabIndex = 1;
@@ -340,7 +340,7 @@
             this.textBox4.BackColor = System.Drawing.Color.LavenderBlush;
             this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox4.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox4.Location = new System.Drawing.Point(181, 12);
+            this.textBox4.Location = new System.Drawing.Point(179, 25);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(638, 25);
             this.textBox4.TabIndex = 25;

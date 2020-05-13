@@ -16,6 +16,7 @@ namespace Otel_Kayıt
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //uygulama ilk olarak FrmAdmin adlı form ile açılır.
             Application.Run(new FrmAdmin());
         }
     }
