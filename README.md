@@ -1,2 +1,2 @@
-# ndp-odev2
+# hotelApp
  Proje
